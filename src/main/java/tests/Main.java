@@ -52,8 +52,8 @@ public class Main {
         cart.AddProductCard(driver);
 
         //Checkout
-       Checkout checkout = new Checkout();
-       checkout.Checkout(driver, firstName, lastName, postalCode);
+        Checkout checkout = new Checkout();
+        checkout.Checkout(driver, firstName, lastName, postalCode);
 
     }
 }
