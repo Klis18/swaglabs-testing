@@ -1,26 +1,22 @@
 package tests;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.List;
 import java.util.Properties;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        // Configura automáticamente el driver adecuado
+        WebDriverManager.chromedriver().setup();
 
-        //Configuración de Selenium Webdriver
-        System.setProperty("webdriver.chrome.driver","C:\\instaladores\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
+        options.addArguments("--incognito", "--no-sandbox", "--disable-dev-shm-usage");
         WebDriver driver = new ChromeDriver(options);
 
         //Configuración de lectura de propiedades
